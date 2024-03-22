@@ -5,7 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            display: flex;
+        }
+    </style>
 </head>
+
 <body>
+    <h1>사용자 정보 관리 시스템</h1>
+    <section>
+        <form class="name-wrap wrap">
+            <p>이름</p>
+            <input type="text" required>
+        </form>
+        <form class="age-wrap wrap">
+            <p>나이</p>
+            <input type="number" required>
+        </form>
+        <form class="email-wrap wrap">
+            <p>이메일</p>
+            <input type="email" required>
+        </form>
+        <button onclick="submitData()">제출</button>
+        <button onclick="getData()">보기</button>
+    </section>
+    <section id="section__show">
+    </section>
+    <script>
+        const forms = document.querySelectorAll("form");
+        const sectionShow = document.getElementById("section__show");
+
+        window.addEventListener('beforeunload', function (event) {
+            localStorage.clear();
+        });
+
+        const submitData = () => {
+            Array.from(forms).map(form => {
+                const key = form.querySelector("p").innerText;
+                const value = form.querySelector("input").value;
+                localStorage.setItem(key, value);
+            })
+        }
+
+
+        const getData = () => {
+            const keys = Object.keys(localStorage);
+
+            if (sectionShow.classList.contains("active")) {
+                sectionShow.classList.remove("active");
+                while (sectionShow.firstChild) {
+                    sectionShow.removeChild(sectionShow.firstChild);
+                }
+            } else {
+                sectionShow.classList.add("active");
+                keys.map(key => {
+                    const value = localStorage.getItem(key);
+                    const createdElement = document.createElement("h2");
+                    createdElement.innerText = `${key}:${value}`;
+                    sectionShow.appendChild(createdElement);
+                })
+            }
+
+
+
+        }
+
+
+    </script>
 </body>
+
 </html>
