@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
+        *{
             margin: 0;
             padding: 0;
         }
-
-        .wrap {
+        .wrap{
             display: flex;
         }
     </style>
@@ -41,13 +40,14 @@
         const forms = document.querySelectorAll("form");
         const sectionShow = document.getElementById("section__show");
 
-        window.addEventListener('beforeunload', function (event) {
+
+        window.addEventListener('beforeunload', function(event) {
             localStorage.clear();
         });
 
         const submitData = () => {
             Array.from(forms).map(form => {
-                const key = form.querySelector("p").innerText;
+                const key =  form.querySelector("p").innerText;
                 const value = form.querySelector("input").value;
                 localStorage.setItem(key, value);
             })
@@ -75,8 +75,6 @@
 
 
         }
-
-
     </script>
 </body>
 
