@@ -15,6 +15,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>사용자 정보 관리 시스템</h1>
     <section>
@@ -39,6 +40,7 @@
         const forms = document.querySelectorAll("form");
         const sectionShow = document.getElementById("section__show");
 
+
         window.addEventListener('beforeunload', function(event) {
             localStorage.clear();
         });
@@ -54,13 +56,26 @@
 
         const getData = () => {
             const keys = Object.keys(localStorage);
-            keys.map(key => {
-                const value = localStorage.getItem(key);
-                const createdElement = document.createElement("h2");
-                createdElement.innerText = `${key}:${value}`;
-                sectionShow.appendChild(createdElement);
-            })
+
+            if (sectionShow.classList.contains("active")) {
+                sectionShow.classList.remove("active");
+                while (sectionShow.firstChild) {
+                    sectionShow.removeChild(sectionShow.firstChild);
+                }
+            } else {
+                sectionShow.classList.add("active");
+                keys.map(key => {
+                    const value = localStorage.getItem(key);
+                    const createdElement = document.createElement("h2");
+                    createdElement.innerText = `${key}:${value}`;
+                    sectionShow.appendChild(createdElement);
+                })
+            }
+
+
+
         }
     </script>
 </body>
+
 </html>
