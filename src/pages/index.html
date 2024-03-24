@@ -7,5 +7,43 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>사용자 정보 관리 시스템</h1>
+    <form action="">
+        이름
+        <input type="text" id="name" />
+    </form>
+    <form action="">
+        나이
+        <input type="number" id="age" />
+    </form>
+    <form action="">
+        이메일
+        <input type="email" id="email" />
+    </form>
+    <button class="submit" type="submit">제출</button>
+    <br />
+    <button class="show">보기</button>
+    <div class="output"></div>
+
+    <script>
+        const submitBtn = document.querySelector(".submit");
+        const showBtn = document.querySelector(".show");
+        const output = document.querySelector(".output");
+
+        let displayed = false;
+        showBtn.addEventListener("click", () => {
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const email = document.getElementById("email").value;
+            
+            if (!displayed) {
+                output.innerHTML = `<h2>사용자 정보</h2><p>이름: ${name}</p><p>나이: ${age}</p><p>이메일: ${email}</p>`;
+                displayed = true;
+            } else {
+                output.innerHTML = "";
+                displayed = false;
+            }
+        })
+    </script>
 </body>
 </html>
