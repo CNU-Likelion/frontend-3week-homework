@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/pages/style.css" />
+    <title>사용자 정보 관리 시스템</title>
+  </head>
+
+  <body>
+    <main>
+      <h1 class="title">사용자 정보 관리 시스템</h1>
+      <section class="section__input">
+        <div>
+          <p1 class="section__name" id="name-label">이름</p1>
+          <input class="section__name" id="name-input" type="text" />
+        </div>
+        <div>
+          <p1 class="section__age" id="age-label">나이</p1>
+          <input class="section__age" id="age-input" type="number" />
+        </div>
+        <div>
+          <p1 class="section__email" id="email-label">이메일</p1>
+          <input class="section__email" id="email-input" type="email" />
+        </div>
+        <button class="section__button" id="button-submit" type="button">
+          제출
+        </button>
+        <br />
+        <button class="section__button" id="button-show" type="button">
+          보기
+        </button>
+      </section>
+      <br />
+      <section class="section__userInfo" style="display: none">
+        <h2>사용자 정보</h2>
+        <br />
+        <div>
+          <p id="userInfo_name"></p>
+        </div>
+        <br />
+        <div>
+          <p id="userInfo_age"></p>
+        </div>
+        <br />
+        <div>
+          <p id="userInfo_email"></p>
+        </div>
+      </section>
+
+      <script src="./src/pages/script.js"></script>
+    </main>
+  </body>
+</html>
