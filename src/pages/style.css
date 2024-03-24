@@ -1,0 +1,60 @@
+
+.information__name{
+    display:flex;
+    height:30px;
+}
+
+.information__name__name1{
+    line-height:30px;
+    margin-right:10px;
+}
+
+.information__name__input{
+    border:1px solid black;
+    width:200px;
+    border-radius: 5px;
+}
+
+.information__age{
+    display:flex;
+    height:30px;
+}
+
+.information__age__age1{
+    line-height: 30px;
+    margin-right:10px;
+}
+
+.information__age__input{
+    border:1px solid black;
+    width:200px;
+    border-radius: 5px;
+}
+
+.information__email{
+    display:flex;
+    height:30px;
+}
+
+
+.information__email__email1{
+    line-height: 30px;
+    margin-right:10px;
+}
+
+.information__email__input{
+    border:1px solid black;
+    width:200px;
+    border-radius: 5px;
+}
+
+.title{
+    margin-top:30px;
+}
+
+
+.button{
+    display:flex;
+    flex-direction: column;
+    width:60px;
+}
