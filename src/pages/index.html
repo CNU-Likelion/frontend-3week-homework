@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -7,5 +7,76 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>사용자 정보 관리 시스템</h1>
+    <section id="section1">
+        <label>이름</label>
+        <input type="text" id="name">
+        <br>
+        <label>나이</label>
+        <input type="number" id="age">
+        <br>
+        <label>이메일</label>
+        <input type="email" id="email">   
+        <br>
+        <button onclick="sendInfo()">제출</button>
+        <br>
+        <button onclick="showInfo()">보기</button>
+    </section>
+    <section id="section2">
+        <div id="userInfo"></div>
+    </section>
+
+    <script>
+        let infoArray =[];
+        let InfoVisible = false;
+        function sendInfo()
+        {
+            infoArray = [];
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const email = document.getElementById("email").value;
+
+            const user = {이름: name, 나이: age, 이메일: email};
+            infoArray.push(user);
+            
+        }
+
+        function showInfo()
+        {
+            const result = document.getElementById("userInfo");
+            result.innerHTML = "";
+
+            let userList = "";
+            infoArray.forEach(function(user,index){
+                userList +=
+                `<div>
+                    <h2>사용자 정보</h2>
+                    <p>이름: ${user.이름}</p>
+                    <p>나이: ${user.나이}</p>
+                    <p>이메일: ${user.이메일}</p>
+                </div>`;
+            });
+
+            result.innerHTML = userList;
+            const section2 = document.getElementById("section2");
+
+            InfoVisible = !InfoVisible;
+
+            if (InfoVisible)
+            {
+                section2.style.display = "block";
+            }
+            else
+            {
+                section2.style.display = "none";
+            }
+        }
+    /*
+    입력값을 수정하고 제출을 누르면
+    바로 사용자 정보가 바뀌어 보이게 구현하고 싶었는데
+    수정한 입력값을 보려면 제출을 누르고, 보기 버튼을 두번 눌러야 하네요 ㅠㅠ
+    */       
+    </script>
+    
 </body>
 </html>
