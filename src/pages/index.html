@@ -4,8 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>사용자 정보 관리 시스템</title>
 </head>
 <body>
+    <h1>사용자 정보 관리 시스템</h1>
+    <label for="name">이름</label>
+    <input type="text" id="name">
+    <br>
+    <label for="age">나이</label>
+    <input type="text" id="age">
+    <br>
+    <label for="mail">이메일</label>
+    <input type="text" id="mail">
+    <br>
+    <button type="submit" onclick="submit()">제출</button>
+    <br>
+    <button onclick="watch()">보기</button>
+
+    <h1 id="showText"></h1>
+    <p id="showName"></p>
+    <p id="showAge"></p>
+    <p id="showMail"></p>
+
+    <script>
+        let name; //'외부에서' 전역변수 선언. 함수 내에서 선언하면 함수에서만 사용할 수 있음.
+        let age;
+        let mail;
+
+        function submit () {
+            name = document.getElementById("name").value; //value를 사용해서 텍스트 가져옴
+            age = document.getElementById("age").value;
+            mail = document.getElementById("mail").value;
+        }
+
+        function watch () {
+            let showText = document.getElementById('showText');
+            let showName = document.getElementById('showName');
+            let showAge = document.getElementById('showAge');
+            let showMail = document.getElementById('showMail');
+            showText.textContent = "사용자 정보";
+            showName.textContent = `이름 : ${name}`;
+            showAge.textContent = `나이 : ${age}`;
+            showMail.textContent = `이메일 : ${mail}`;
+        }
+
+    </script>
 </body>
 </html>
