@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>사용자 정보 관리 시스템</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <h1>사용자 정보 관리 시스템</h1>
+    <div class="inputDb">
+        <div>이름: <input type="text" id="name" placeholder="이름을 입력해 주세요">
+            <div class="error" id="error__name"></div>
+        </div>
+        <div>나이: <input type="text" id="age" placeholder="나이를 입력해 주세요">
+            <div class="error" id="error__age"></div>
+        </div>
+        <div>이메일: <input type="text" id="email" placeholder="이메일을 입력해 주세요">
+            <div class="error" id="error__email"></div>
+        </div>
+        <button id="subBtn" onclick="submit()">제출</button>
+        <button id="viewBtn" onclick="view()">보기</button>
+    </div>
+    <div>
+        <div class="subDb">
+            <h1>사용자 정보</h1>
+            <div>이름 : <span id="subName"></span></div>
+            <div>나이 : <span id="subAge"></span></div>
+            <div>이메일 : <span id="subEmail"></span></div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

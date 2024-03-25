@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+.inputDb div{
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    align-items: center;
+}
+
+.error{
+    color:red;
+    height: 10px;
+    font-size: 11px;
+}
