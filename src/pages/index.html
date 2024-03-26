@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>사용자 정보 관리 시스템</title>
 </head>
 <body>
+    <h1>사용자 정보 관리 시스템</h1>
+    <div>
+        이름: <input type="text" id="name"><br>
+        나이: <input type="number" id="age"><br>
+        이메일: <input type="email" id="email"><br>
+        <button onclick="submitInfo()">제출</button>
+        <button onclick="viewInfo()">보기</button>
+    </div>
+    <div id="userInfoDisplay"></div>
+    <script src="script.js"></script>
 </body>
 </html>
